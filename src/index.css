@@ -8,6 +8,9 @@ html{
 body{
   overflow-x:hidden;
 }
+.vertical-timeline-element {
+  overflow: hidden;
+}
 
 @layer utilities {
     @keyframes gradientChange {
