@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import scroll from "../src/assets/scroll down.gif";
 import Background from "./components/Background";
 import Navbar from "./components/Navbar";
-import ScrollIndicator from "./components/ScrollIndicator";
+import ScrollIndicator from "./components/Scrollindicator";
 import Hero from "./components/Hero";
 import PreLoader from "./components/PreLoader";
 import Education from "./components/Education";
