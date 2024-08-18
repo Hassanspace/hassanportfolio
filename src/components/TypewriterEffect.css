@@ -1,0 +1,15 @@
+/* src/components/TypewriterEffect.css */
+
+/* Typewriter effect styling */
+.typewriter {
+    overflow: hidden; /* Hides the text while it’s being typed */
+    white-space: nowrap; /* Prevents wrapping */
+    border-right: 3px solid white; /* Cursor */
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+  }
+  

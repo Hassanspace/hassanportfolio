@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+    @keyframes gradientChange {
+        0% {
+            background-position: 0%
+        }
+
+        50% {
+            background-position: 100%
+        }
+
+        100% {
+            background-position: 0%
+        }
+    }
+
+    .gradient {
+        background: linear-gradient(90deg, rgb(47, 47, 253), rgb(51, 59, 117), rgb(1, 1, 59)
+        );
+        background-size: 200% 200%;
+    }
+
+    .element-to-rotate {
+        animation: gradientChange 4s ease infinite;
+    }
+}
+/* Main content styling */
+.hero-image{
+  border-radius: 42% 58% 38% 62% / 51% 37% 63% 49%  ;
+}
+/* Ensures that the sticky navbar has a smooth transition for shadow */
+.navbar {
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  /* Optional: style the shadow effect */
+  .shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+ 
+
+/* Create a container using CSS properties */
+
+  /* CustomProgressBar.css */
+/* CustomProgressBar.css */
+.custom-progress-bar {
+    position: relative;
+    width: 60%;
+    height: 60%;
+  }
+  
+  .custom-progress-bar .CircularProgressbar-path {
+    stroke: url(#gradient); /* Use the gradient */
+  }
+  
+  .custom-progress-bar .CircularProgressbar-trail {
+    stroke: #f9f9fa; /* Color of the trail */
+  }
+  
+  /* HTML: <div class="loader"></div> */
+.loader {
+  width: 20px;
+  aspect-ratio: 1;
+  display: grid;
+  border-radius: 50%;
+  background:
+    linear-gradient(0deg ,rgb(0 0 0/50%) 30%,#0000 0 70%,rgb(0 0 0/100%) 0) 50%/8% 100%,
+    linear-gradient(90deg,rgb(0 0 0/25%) 30%,#0000 0 70%,rgb(0 0 0/75% ) 0) 50%/100% 8%;
+  background-repeat: no-repeat;
+  animation: l23 1s infinite steps(12);
+}
+.loader::before,
+.loader::after {
+   content: "";
+   grid-area: 1/1;
+   border-radius: 50%;
+   background: inherit;
+   opacity: 0.915;
+   transform: rotate(30deg);
+}
+.loader::after {
+   opacity: 0.83;
+   transform: rotate(60deg);
+}
+@keyframes l23 {
+  100% {transform: rotate(1turn)}
+}
+.footer{
+  border-radius: 84px 85px 10px 10px;
+}
