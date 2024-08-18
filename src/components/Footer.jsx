@@ -23,7 +23,7 @@ const Footer = () => {
           <div className="grid grid-flow-col gap-4 cursor-pointer">
             <a target="_blank" href="https://www.instagram.com/hass_anrasool/">
               <svg
-                xmlns="https://www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 width="24"
                 height="24"
@@ -50,7 +50,7 @@ const Footer = () => {
                 />
               </svg>
             </a>
-            <a target="_blank" href="https://www.linkedin.com/in/hassan-rasool-0b81a3318/">
+            <a target="_blank" href="http://www.linkedin.com/in/hassan-rasool-0b81a3318/">
               <svg
                 xmlns="https://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -88,7 +88,7 @@ const Footer = () => {
                 />
               </svg>
             </a>
-            <a target="_blank" href="https://github.com/Hassanspace">
+            <a target="_blank" href="http://github.com/Hassanspace">
               <svg
                 xmlns="https://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
