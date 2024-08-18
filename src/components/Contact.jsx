@@ -2,7 +2,17 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
+// Initialize AOS with custom settings
+AOS.init({
+  duration: 1000, // Duration of the animation in milliseconds
+  easing: 'ease-in-out', // Easing function for the animation
+  once: true, // Whether animation should happen only once or every time you scroll up/down
+  offset: 100, // Offset (in px) from the original trigger point
+});
 
 
 const Contact = () => {
@@ -86,7 +96,7 @@ const Contact = () => {
     return (
         <>
             <div className="flex justify-center items-center  p-6 bg-transparent ">
-                <form  id="contact-form" onSubmit={handleSubmit} className="shadow-[0px_0px_16px_2px_#2c5282] bg-black bg-opacity-20 backdrop-blur-sm p-10 rounded-xl w-full max-w-lg space-y-6">
+                <form  data-aos="zoom-out-up" data-aos-delay="200" id="contact-form" onSubmit={handleSubmit} className="shadow-[0px_0px_16px_2px_#2c5282] bg-black bg-opacity-20 backdrop-blur-sm p-10 rounded-xl w-full max-w-lg space-y-6">
                     <div className='font-bold text-3xl text-white mb-4'>
                         <h1>Lets Connect 📫</h1>
                     </div>
