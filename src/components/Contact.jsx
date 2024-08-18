@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-
-
-
-
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
-    // State to manage form input values and validation errors
     const [form, setForm] = useState({
         first_name: '',
         user_email: '',
@@ -15,9 +11,8 @@ const Contact = () => {
         message: '',
     });
     const [errors, setErrors] = useState({});
-    const [loading, setLoading] = useState(false); // New state for loading
+    const [loading, setLoading] = useState(false);
 
-    // Handle input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setForm({
@@ -26,7 +21,6 @@ const Contact = () => {
         });
     };
 
-    // Validate form inputs
     const validate = () => {
         const errors = {};
         if (!form.first_name.trim()) errors.first_name = 'This field is required';
@@ -37,7 +31,6 @@ const Contact = () => {
         return errors;
     };
 
-    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
         const validationErrors = validate();
@@ -46,7 +39,7 @@ const Contact = () => {
             return;
         }
 
-        setLoading(true); // Set loading to true when submission starts
+        setLoading(true);
 
         emailjs.sendForm('service_1ffihlk', 'template_pmfyelv', e.target, 'NtaEhUvivz0pmr0HH')
             .then((result) => {
@@ -60,7 +53,6 @@ const Contact = () => {
                     progress: undefined,
                     theme: "light",
                 });
-                // Reset the form after successful submission
                 setForm({
                     first_name: '',
                     user_email: '',
@@ -68,7 +60,7 @@ const Contact = () => {
                     message: '',
                 });
                 setErrors({});
-                setLoading(false); // Set loading to false when submission completes
+                setLoading(false); // Reset loading state
             }, (error) => {
                 toast.error('Response not sent!', {
                     position: "top-right",
@@ -80,14 +72,14 @@ const Contact = () => {
                     progress: undefined,
                     theme: "light",
                 });
-                setLoading(false); // Set loading to false when there's an error
+                setLoading(false); // Reset loading state
             });
     };
 
     return (
         <>
-            <div className="flex justify-center items-center  p-6 bg-transparent ">
-                <form   id="contact-form" onSubmit={handleSubmit} className="shadow-[0px_0px_16px_2px_#2c5282] bg-black bg-opacity-20 backdrop-blur-sm p-10 rounded-xl w-full max-w-lg space-y-6">
+            <div className="flex justify-center items-center p-6 bg-transparent">
+                <form id="contact-form" onSubmit={handleSubmit} className="shadow-[0px_0px_16px_2px_#2c5282] bg-black bg-opacity-20 backdrop-blur-sm p-10 rounded-xl w-full max-w-lg space-y-6">
                     <div className='font-bold text-3xl text-white mb-4'>
                         <h1>Lets Connect 📫</h1>
                     </div>
@@ -155,8 +147,8 @@ const Contact = () => {
                     
                     <button
                         type="submit"
-                        className={`w-full h-[40px] py-2 px-4  rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${loading ? 'bg-gray-600' : 'bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600'} text-white font-bold flex items-center justify-center`}
-                        disabled={loading} // Disable button when loading
+                        className={`w-full h-[40px] py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${loading ? 'bg-gray-600' : 'bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600'} text-white font-bold flex items-center justify-center`}
+                        disabled={loading}
                     >
                         {loading ? (
                             <div className="loader"></div>
@@ -166,7 +158,7 @@ const Contact = () => {
                     </button>
                 </form>
             </div>
-           
+            <ToastContainer />
         </>
     );
 };
