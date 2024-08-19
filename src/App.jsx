@@ -8,7 +8,7 @@ import PreLoader from "./components/PreLoader";
 import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import Contact from "./components/Contact"; // Make sure to import Contact
+
 import Footer from "./components/Footer";
 
 function App() {
@@ -68,7 +68,7 @@ function App() {
             <p className="text-gray-400 font-bold text-xl mb-3">
               Lets Connect , Feel free to reach out to me for any queries or collaborations.
             </p>
-            <Contact />
+           
           </div>
        
           <Footer/>
