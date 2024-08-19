@@ -42,16 +42,7 @@ const Contact = () => {
 
         emailjs.sendForm('service_1ffihlk', 'template_pmfyelv', e.target, 'NtaEhUvivz0pmr0HH')
             .then((result) => {
-                toast.success('Response Sent Successfully!', {
-                    position: "top-right",
-                    autoClose: 2000,
-                    hideProgressBar: true,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
+               console.log("success")
                 setForm({
                     first_name: '',
                     user_email: '',
@@ -61,16 +52,7 @@ const Contact = () => {
                 setErrors({});
                 setLoading(false); // Reset loading state
             }, (error) => {
-                toast.error('Response not sent!', {
-                    position: "top-right",
-                    autoClose: 2000,
-                    hideProgressBar: true,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
+               console.log("error")
                 setLoading(false); // Reset loading state
             });
     };
